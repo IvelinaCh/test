@@ -1,0 +1,50 @@
+body {
+  background-color: gray;
+}
+
+div {
+  margin-top: 15%;
+  margin-left: 40%;
+}
+
+.label {
+  position: relative;
+}
+
+.label::before,
+.label::after {
+  content: "";
+  position: absolute;
+}
+
+.label::before {
+  width: 300px;
+  height: 130px;
+  top: 0;
+  left: 0;
+  background-color: red;
+  border-radius: 65px;
+}
+
+.label::after {
+  width: 130px;
+  height: 130px;
+  top: 0;
+  left: 0;
+  background-color: white;
+  border-radius: 50%;
+  cursor: pointer;
+  transition: 150ms linear;
+}
+
+.checkbox {
+  display: none;
+}
+
+.checkbox:checked ~ .label::after {
+  transform: translateX(170px);
+}
+
+.checkbox:checked ~ .label::before {
+  background-color: blue;
+}
